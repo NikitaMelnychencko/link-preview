@@ -1,8 +1,10 @@
-const axios = require('axios');
-const cheerio = require('cheerio');
+import axios from 'axios'
+import cheerio from'cheerio'
+import {IHtmlParsingResult, IHtmlParsServices} from './htmlPars.type'
 
-class HtmlParsServices {
-  async fetchHtml(url) {
+
+class HtmlParsServices implements IHtmlParsServices{
+  async fetchHtml(url: string): Promise<string> {
     try {
       const response = await axios.get(url);
       return response.data;
@@ -11,7 +13,7 @@ class HtmlParsServices {
     }
   }
 
-  parseHtml(html, customDescription, customImageUrl) {
+  parseHtml(html: string, customDescription?: string, customImageUrl?: string): IHtmlParsingResult {
     const $ = cheerio.load(html);
 
     const title = $('title').text();
@@ -25,4 +27,4 @@ class HtmlParsServices {
   }
 }
 
-module.exports = new HtmlParsServices();
+export default new HtmlParsServices();
