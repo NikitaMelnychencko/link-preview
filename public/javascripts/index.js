@@ -51,7 +51,7 @@ function appendHtml(data, links) {
             <li>
             <a href="${links[idx]}" target="_blank">
             
-              <img src='${imageUrl}' alt='${title}' />
+              <img src='http://localhost:8080/api/prev-link/image-proxy?url=${imageUrl}' alt='${title}' />
               <div>
                 <h2>${title}</h2>
                 <p>${description}</p>
