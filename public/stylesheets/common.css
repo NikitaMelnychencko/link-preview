@@ -21,3 +21,29 @@
     transition: .3s linear;
     cursor: pointer;
   }
+
+  button{
+    border: none;
+    display: block;
+    cursor: pointer;
+  }
+  html {
+        overflow: overlay;
+    scrollbar-width: thin;
+
+  ::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #c5c8d2;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fff;
+ 
+  }
+
+
+  }
