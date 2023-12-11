@@ -30,7 +30,7 @@ List key features or functionalities of project.
    git checkout main
    ```
 2. yarn install
-3. add PORT into .env
+3. add PORT=whatever you want into .env . Default PORT 8080
 4. input `yarn start ` for start your server in production mode or input
    `yarn dev ` for start your server in developed mode
 5. Go to http://localhost:8080/ in your browser
