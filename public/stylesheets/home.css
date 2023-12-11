@@ -98,7 +98,7 @@ li {
 }
 
 .wrapper-card {
-  padding: 20px;
+  padding: 5px 20px;
   background-color: #e0e0e0;
 }
 
@@ -114,15 +114,14 @@ a {
 }
 
 img {
-  width: auto;
-  height: 180px;
+  width: 100%;
+  height: auto;
   border-bottom: 1px solid #ddd;
-
   
 }
 
 h2 {
-  margin-bottom: 10px;
+  margin-bottom: 3px;
   font-size: 1em;
 }
 
@@ -130,6 +129,11 @@ p {
   font-size: 0.6em;
   color: #555;
 }
+.description,
+.info{
+  margin-bottom: 3px;
+}
+
 .wrapper-typer {
   height: 12px;
 }

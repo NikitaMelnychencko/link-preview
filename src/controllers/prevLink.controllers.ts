@@ -6,10 +6,6 @@ export const PrevLinkCtr = {
   getPrevLink: async (req: Request, res: Response) => {
     const { urls } = req.query;
 
-    if (!urls) {
-      return res.status(400).send('URL is required')
-    }
-
     const arrayUrls = JSON.parse(urls as string);
     const promises = arrayUrls.map(async (url: string) => {
       try {
@@ -37,10 +33,6 @@ export const PrevLinkCtr = {
 
   getMedia: async (req: Request, res: Response) => {
     const imageUrl = req.query.url;
-
-    if (!imageUrl) {
-      return res.status(400).send('URL is required');
-    }
 
     try {
       const response = await axios.get(imageUrl as string, { responseType: 'stream' });

@@ -1,13 +1,23 @@
-import axios from 'axios'
 import cheerio from'cheerio'
 import {IHtmlParsingResult, IHtmlParsServices} from './htmlPars.type'
-
+import puppeteer from 'puppeteer';
 
 class HtmlParsServices implements IHtmlParsServices{
   async fetchHtml(url: string): Promise<string> {
     try {
-      const response = await axios.get(url);
-      return response.data;
+      const browser = await puppeteer.launch();
+      const page = await browser.newPage();
+
+      // Navigate to the URL
+      await page.goto(url);
+
+      // Get the HTML content after the page is loaded
+      const htmlContent = await page.content();
+
+      // Close the browser
+      await browser.close();
+
+      return htmlContent;
     } catch (error) {
       throw new Error('Error fetching HTML');
     }

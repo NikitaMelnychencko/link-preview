@@ -87,8 +87,8 @@ function appendHtml(data, links) {
               <img src='http://localhost:8080/api/prev-link/image-proxy?url=${imageUrl}' alt='${title}' />
               <div class='wrapper-card'>
                 <h2>${title}</h2>
-                <p>${description}</p>
-                <p>
+                <p class='description'>${description}</p>
+                <p class='info'>
                   <span>${host[2]}</span>
                   <span>.</span>
                   <span>Для перегляду знадобиться 1 хв</spanх>
