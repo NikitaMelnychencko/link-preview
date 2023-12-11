@@ -5,6 +5,7 @@ const ref = {
   button: document.querySelector('.button-modal'),
   backdrop: document.querySelector('.backdrop'),
   form: document.querySelector('.form'),
+  cross_icon: document.querySelector('.icon-cross'),
 };
 
 if (ref.button) {
@@ -20,12 +21,19 @@ if (ref.form) {
 
 if (ref.backdrop) {
   ref.backdrop.addEventListener('click', async e => {
-    console.log(e.target.className);
+    if (e.target.tagName === 'svg') return;
     if (
-      e.target.className.includes('backdrop') ||
-      e.target.className.includes('close-btn') ||
-      e.target.className.includes('icon-cross')
+      e.target.className?.includes('backdrop') ||
+      e.target.className?.includes('close-btn')
     )
+      ref.backdrop.classList.add('backdrop--is-hidden');
+  });
+}
+
+if (ref.cross_icon) {
+  ref.cross_icon.addEventListener('click', async e => {
+    if (e.target.tagName !== 'svg') return;
+    if (e.target.classList[0] === 'icon-cross')
       ref.backdrop.classList.add('backdrop--is-hidden');
   });
 }
