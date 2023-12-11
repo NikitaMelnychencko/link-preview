@@ -24,7 +24,7 @@ if (ref.backdrop) {
     if (
       e.target.className.includes('backdrop') ||
       e.target.className.includes('close-btn') ||
-      e.target.className.includes('close-btn-text')
+      e.target.className.includes('icon-cross')
     )
       ref.backdrop.classList.add('backdrop--is-hidden');
   });

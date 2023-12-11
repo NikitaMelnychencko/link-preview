@@ -62,6 +62,7 @@
   right: 10px;
 
   margin-bottom: 10px;
+  padding: 0;
   margin-left: auto;
   border: 1px solid gray;
   background: black;
@@ -69,7 +70,13 @@
   border-radius: 50%;
   width: 20px;
   height: 20px;
+
 }
+.close-btn svg{
+    width: 16px;
+  height: 16px;
+}
+
 
 .label {
   margin-bottom: 10px;
