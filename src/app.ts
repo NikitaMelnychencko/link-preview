@@ -6,12 +6,10 @@ import {limiter} from './libs/limiter'
 import { engine } from 'express-handlebars'
 import PrevLinkRouter from './routes/link.routes'
 
-//import httpsRedirect from 'express-https-redirect'
-
 const app = express();
 
 const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
-//app.use('/', httpsRedirect(true));
+
 app.use(limiter(15 * 60 * 1000, 1000));
 
 app.use((req:any, res:any, next:any) => {
