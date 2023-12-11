@@ -5,6 +5,7 @@ import helmet from 'helmet'
 import {limiter} from './libs/limiter'
 import { engine } from 'express-handlebars'
 import PrevLinkRouter from './routes/link.routes'
+import PublicRouter from './routes/public.routs'
 
 const app = express();
 
@@ -43,16 +44,8 @@ app.set('view engine', 'handlebars');
 //Sets handlebars configurations (we will go through them later on)
 app.engine('handlebars', engine());
 
-//================================================
-app.get('/', (_req:any, res:any,) => {
-  res.render('home', { cssFileName: 'home', title: 'Home' });
-});
 
-app.get('/redirect', (_req:any, res:any,) => {
-  res.render('redirect', { cssFileName: 'redirect', title: 'Redirect' });
-});
-//=============================================
-
+app.use('/', PublicRouter);
 app.use('/api/prev-link', PrevLinkRouter);
 app.use((_req:any, res:any,) => {
   res.status(404).json({ message: 'Not found' });
