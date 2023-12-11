@@ -31,4 +31,6 @@ List key features or functionalities of project.
    ```
 2. yarn install
 3. add PORT into .env
-4. Go to http://localhost:8080/ in your browser
+4. input `yarn start ` for start your server in production mode or input
+   `yarn dev ` for start your server in developed mode
+5. Go to http://localhost:8080/ in your browser
